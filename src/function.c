@@ -24,7 +24,7 @@ int print_menu()
 		print_in_middle(1, 1, 0, "Клавиатурный тренажёр ", NULL);
 		printw("\n\n\n");
 		for(i = 0;i <= n_groups-2; ++i)
-			printw("\t%3d: \nВыполнение %s\n", i + 1, groups[i]);
+			printw("\t%3d: Выполнение %s\n", i + 1, groups[i]);
 		printw("\t%3d: \tExit\n", i + 1);
 	
 		printw("\n\n\tВыберете: ");
@@ -101,5 +101,11 @@ void print_in_middle(int startx, int starty, int width, char *string, WINDOW *wi
 	temp = (width - length)/ 2;
 	x = startx + (int)temp;	
 	mvwprintw(win, y, x, "%s", string);
+	refresh();
+}
+
+void print_byebye()
+{	printw("\n");
+	print_in_middle(0,0,0,"Спасибо что используете нашу программу\n", NULL);
 	refresh();
 }
