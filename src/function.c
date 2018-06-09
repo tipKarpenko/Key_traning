@@ -14,7 +14,7 @@ char groups[13][9] = {  "`123456" ,
 					"zxcv",
 					"bnm",
 				  };
-				  
+
 int print_menu()
 {	int choice, i;
 	choice = 0;
@@ -44,3 +44,18 @@ int print_menu()
 	}
 	return choice;
 }
+
+void create_test_string(char *test_array, int choice)
+{	int i, index, length;
+	
+	length = strlen(groups[choice]);
+	for(i = 0;i <= HSIZE - 1; ++i)
+	{	if(i%5 == 0)
+			test_array[i] = ' ';
+		else
+		{	index = (int)(random() % length);
+			test_array[i] = groups[choice][index];
+		}
+	}
+	test_array[i] = '\0';
+}	
