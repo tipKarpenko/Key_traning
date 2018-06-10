@@ -37,7 +37,7 @@ int main()
 			}
 		}
 		clear();
-		strcpy(string, "Окно ввода");
+		strcpy(string, "Level");
 		print_in_middle(STARTX, STARTY - 2, LENGTH, string, NULL);
 		attron(A_REVERSE);
 		mvprintw(STATUSY, STATUSX, "Press F1 to exit the main menu");
