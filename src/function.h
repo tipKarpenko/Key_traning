@@ -10,7 +10,7 @@
 #define STATUSY 25
 #define KEY_F1 265
 
-#include <curses.h>
+#include <ncurses.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -22,10 +22,12 @@ char groups[13][9];
 
 
 int print_menu();
+int check_choice(int choice);
 void print_byebye();
 void create_test_string(char *test_array, int choice);
 void print_time(time_t startt, time_t endt, int mistakes);
 void print_in_middle(int startx, int starty, int width, char *string, WINDOW *win);
+
 
 int n_groups;
 
