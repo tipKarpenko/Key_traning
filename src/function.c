@@ -22,10 +22,10 @@ int print_menu()
 	while(1)
 	{	clear();
 		printw("\n\n");
-		print_in_middle(1, 1, 0, "Клавиатурный тренажёр ", NULL);
+		print_in_middle(1, 1, 0, "Keyboard trener ", NULL);
 		printw("\n\n\n");
 		for(i = 0;i <= n_groups-2; ++i)
-			printw("\t%3d: Выполнение %s\n", i + 1, groups[i]);
+			printw("\t%3d: Choose %s\n", i + 1, groups[i]);
 		printw("\t%3d: \tExit\n", i + 1);
 	
 		printw("\n\n\tВыберете: ");
@@ -43,7 +43,7 @@ int print_menu()
 			break;
 		else
 		{	attron(A_REVERSE);
-			mvprintw(STATUSY, STATUSX, "Некорректный выбор");
+			mvprintw(STATUSY, STATUSX, "Incorrect selection");
 			attroff(A_REVERSE);
 			getch();
 		}
@@ -81,7 +81,7 @@ void print_time(time_t start_t, time_t end_t, int mistakes)
 	s = (int)diff; 
 	
 	attron(A_REVERSE);
-	mvprintw(STATUSY, STATUSX, "Ошибок : %d Времени затрачено: %d:%d:%d WPM : %.2f    Нажмите кнопку что бы продолжить", mistakes, h, m, s, wpm);
+	mvprintw(STATUSY, STATUSX, "Errors : %d Time spent: %d:%d:%d WPM : %.2f  Press button to continue", mistakes, h, m, s, wpm);
 	attroff(A_REVERSE);
 
 	refresh();
@@ -112,6 +112,6 @@ void print_in_middle(int startx, int starty, int width, char *string, WINDOW *wi
 
 void print_byebye()
 {	printw("\n");
-	print_in_middle(0,0,0,"Спасибо что используете нашу программу\n", NULL);
+	print_in_middle(0,0,0,"Thank you for using our program\n", NULL);
 	refresh();
 }
