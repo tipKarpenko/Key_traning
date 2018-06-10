@@ -17,6 +17,7 @@ char groups[13][9] = {  "`123456" ,
 
 int print_menu()
 {	int choice, i;
+	int lag = 0;
 	choice = 0;
 	while(1)
 	{	clear();
@@ -29,8 +30,13 @@ int print_menu()
 	
 		printw("\n\n\tВыберете: ");
 		refresh();
-		echo();
-		scanw("%d", &choice);
+		while (lag == 0)
+		{	
+			echo();
+			scanw("%d", &choice);
+			lag=check_choice(choice);
+		}
+		lag=0;
 		noecho();
 	
 		if(choice >= 1 && choice <= n_groups + 1)
