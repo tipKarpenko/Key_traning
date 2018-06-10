@@ -28,7 +28,7 @@ int print_menu()
 			printw("\t%3d: Choose %s\n", i + 1, groups[i]);
 		printw("\t%3d: \tExit\n", i + 1);
 	
-		printw("\n\n\tВыберете: ");
+		printw("\n\n\tChoose: ");
 		refresh();
 		while (lag == 0)
 		{	
