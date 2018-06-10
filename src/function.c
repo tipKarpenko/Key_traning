@@ -25,7 +25,7 @@ int print_menu()
 		print_in_middle(1, 1, 0, "Keyboard trener ", NULL);
 		printw("\n\n\n");
 		for(i = 0;i <= n_groups-2; ++i)
-			printw("\t%3d: Choose %s\n", i + 1, groups[i]);
+			printw("\t%3d: Level %s\n", i + 1, groups[i]);
 		printw("\t%3d: \tExit\n", i + 1);
 	
 		printw("\n\n\tChoose: ");
